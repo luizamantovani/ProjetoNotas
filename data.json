@@ -1,0 +1,12 @@
+[ {
+"id": "1",
+"titulo": "Lembretes",
+"texto": "Comprar leite e pão",
+"criadoEm": "2026-04-28T10:00:00Z"
+},
+{
+"id": "2",
+"titulo": "Tarefas do trabalho",
+"texto": "Enviar relatório até sexta-feira",
+"criadoEm": "2026-04-28T10:00:00Z"
+}]
