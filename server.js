@@ -9,11 +9,14 @@ const FILE = 'data.json';
 app.use(express.json());
 
 // Libera acesso externo (CORS)
+
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
 }));
+
+app.options('*', cors());  // Add this line to handle preflight requests
 
 function readNotes() {
     try {
