@@ -40,6 +40,17 @@ app.get('/api/notes', (req, res) => {
     res.json(notes);
 });
 
+// GET - Obter nota específica por ID
+app.get('/api/notes/:id', (req, res) => {
+    const notes = readNotes();
+    const note = notes.find(n => n.id === req.params.id);
+    if (note) {
+        res.json(note);
+    } else {
+        res.status(404).json({ erro: 'Nota não encontrada' });
+    }
+});
+
 app.post('/api/notes', (req, res) => {
     const notes = readNotes();
     const novaNota = {
