@@ -45,7 +45,8 @@ app.post('/api/notes', (req, res) => {
     const novaNota = {
         id: Date.now().toString(),
         titulo: req.body.titulo,
-        texto: req.body.texto
+        texto: req.body.texto,
+        criadoEm: new Date().toISOString()
     };
     notes.push(novaNota);
     saveNotes(notes);
@@ -74,5 +75,5 @@ app.delete('/api/notes/:id', (req, res) => {
 
 // Inicia servidor
 app.listen(PORT, () => {
-    console.log('Servidor rodando em https://projetonotas.onrender.com/api/notes');
+    console.log('Servidor rodando em https://projetonotas.onrender.com/api/notas');
 });
